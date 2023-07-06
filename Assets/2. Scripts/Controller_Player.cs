@@ -1,64 +1,79 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Controller_Player : MonoBehaviour
 {
     #region Variables to use: 
 
-    // Private non-visible variables:
-    private Vector2 playerInput;
-    private bool isMoving;
+    // Private non-visible variables: 
+    private Vector2 movementInput;
+    private Rigidbody2D playerRb;
+    private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-    [Header("Player Movement Attributes: ")]
-    public float movementSpeed;
- 
+    [Header("Player Attributes: ")]
+    public float movementSpeed = 1f;
+    public float collisionOffset = 0.05f;
+    public ContactFilter2D movementFilter;
+  
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        // Not used at the moment. 
+        playerRb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckMovement(); 
+        // Not used at the moment. 
     }
 
-    #region Methods in use: 
-
-    private void CheckMovement()
+    // Fixed Update is called rigth before the Update
+    void FixedUpdate()
     {
-        if (isMoving != true)
+        if (movementInput != Vector2.zero)
         {
-            playerInput.x = Input.GetAxisRaw("Horizontal");
-            playerInput.y = Input.GetAxisRaw("Vertical");
+            bool success = TryMove(movementInput);
 
-            if (playerInput != Vector2.zero)
+            if (!success)
             {
-                var targetPos = transform.position;
-                targetPos.x += playerInput.x;
-                targetPos.y += playerInput.y;
+                success = TryMove(new Vector2(movementInput.x, 0));
 
-                StartCoroutine(MoveCharacter(targetPos));
+                if (!success)
+                {
+                    success = TryMove(new Vector2(movementInput.y, 0));
+                }
             }
         }
     }
 
-    private IEnumerator MoveCharacter(Vector3 targetPos)
+    #region Methods in use: 
+
+    private bool TryMove(Vector2 direction)
     {
-        while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
+        int count = playerRb.Cast(
+                direction,
+                movementFilter,
+                castCollisions,
+                movementSpeed * Time.fixedDeltaTime + collisionOffset);
+
+        if (count == 0)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, movementSpeed * Time.deltaTime);
+            playerRb.MovePosition(playerRb.position + direction * movementSpeed * Time.fixedDeltaTime);
 
-            yield return null;
+            return true;
         }
+        else
+        {
+            return false;
+        }
+    }
 
-        transform.position = targetPos;
-
-        isMoving = false;
+    private void OnMove(InputValue movementValue)
+    {
+        movementInput = movementValue.Get<Vector2>();
     }
 
     #endregion
