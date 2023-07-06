@@ -9,6 +9,8 @@ public class Controller_Player : MonoBehaviour
     // Private non-visible variables: 
     private Vector2 movementInput;
     private Rigidbody2D playerRb;
+    private Animator playerAnimator;
+
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     [Header("Player Attributes: ")]
@@ -21,7 +23,10 @@ public class Controller_Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Getting components to avoid making all player's variables public: 
+
         playerRb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,23 +38,45 @@ public class Controller_Player : MonoBehaviour
     // Fixed Update is called rigth before the Update
     void FixedUpdate()
     {
+        PlayerMovementChecking();
+    }
+
+    #region Methods in use: 
+
+    private void PlayerMovementChecking()
+    {
         if (movementInput != Vector2.zero)
         {
             bool success = TryMove(movementInput);
 
-            if (!success)
+            if (!success && movementInput.x > 0)
             {
                 success = TryMove(new Vector2(movementInput.x, 0));
-
-                if (!success)
-                {
-                    success = TryMove(new Vector2(movementInput.y, 0));
-                }
             }
+            //------------------------------------------------------ We want to avoid with this checking if there is a place to go, if is not then the player should not attempt moving. 
+            if (!success && movementInput.y > 0)
+            {
+                success = TryMove(new Vector2(0, movementInput.y));
+            }
+
+            playerAnimator.SetBool("isMoving", success);
+        }
+        else
+        {
+            playerAnimator.SetBool("isMoving", false);
+        }
+
+        // We need to change between normal walking and side walking:
+        
+        if (movementInput.x > 0 || movementInput.x < 0)
+        {
+            playerAnimator.SetBool("isSideWalking", true);
+        }
+        else if (movementInput.x == 0)
+        {
+            playerAnimator.SetBool("isSideWalking", false);
         }
     }
-
-    #region Methods in use: 
 
     private bool TryMove(Vector2 direction)
     {
