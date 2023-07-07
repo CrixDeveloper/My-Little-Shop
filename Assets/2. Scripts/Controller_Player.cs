@@ -9,17 +9,19 @@ public class Controller_Player : MonoBehaviour
     // Private non-visible variables: 
     private Vector2 movementInput;
     private Rigidbody2D playerRb;
-    private Animator playerAnimator;
-    private Animator bluePlayerAnimator;
-    private Animator greenPlayerAnimator;
-
+    
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     [Header("Player Attributes: ")]
     public float movementSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
-  
+
+    [Header("Animator References: ")]
+    public Animator aC_player;
+    public Animator aC_BluePlayer;
+    public Animator aC_GreenPlayer;
+
     #endregion
 
     // Start is called before the first frame update
@@ -28,9 +30,6 @@ public class Controller_Player : MonoBehaviour
         // Getting components to avoid making all player's variables public: 
 
         playerRb = GetComponent<Rigidbody2D>();
-        playerAnimator = GetComponentInChildren<Animator>();
-        bluePlayerAnimator = GetComponentInChildren<Animator>();
-        greenPlayerAnimator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -63,15 +62,15 @@ public class Controller_Player : MonoBehaviour
                 success = TryMove(new Vector2(0, movementInput.y));
             }
 
-            playerAnimator.SetBool("isMoving", success);
-            bluePlayerAnimator.SetBool("isMoving", success);
-            greenPlayerAnimator.SetBool("isMoving", success);
+            aC_player.SetBool("isMoving", success);
+            aC_BluePlayer.SetBool("isMoving", success);
+            aC_GreenPlayer.SetBool("isMoving", success);
         }
         else
         {
-            playerAnimator.SetBool("isMoving", false);
-            bluePlayerAnimator.SetBool("isMoving", false);
-            greenPlayerAnimator.SetBool("isMoving", false);
+            aC_player.SetBool("isMoving", false);
+            aC_BluePlayer.SetBool("isMoving", false);
+            aC_GreenPlayer.SetBool("isMoving", false);
         }
     }
 

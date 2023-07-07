@@ -426,6 +426,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 103395602}
+  - component: {fileID: 103395604}
+  - component: {fileID: 103395603}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -448,6 +450,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &103395603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103395601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df7c0253e744154d86b447bba96a070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 500
+  playerMoneyText: {fileID: 457273182}
+--- !u!114 &103395604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103395601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7900c5de5cc5f3f4a8cbe4ea7b1a6158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_ShirtCostText: {fileID: 774263906}
+  g_ShirtCostText: {fileID: 592145756}
+  hat_CostText: {fileID: 1580504888}
 --- !u!1 &164760911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2613,6 +2644,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1053378599495253511, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
   m_PrefabInstance: {fileID: 7436807957378465826}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &464184385 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5668927317025311349, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
+  m_PrefabInstance: {fileID: 7436807957378465826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &484387663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2900,7 +2936,7 @@ GameObject:
   - component: {fileID: 592145757}
   - component: {fileID: 592145756}
   m_Layer: 0
-  m_Name: Cost_Text
+  m_Name: gCost_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3908,7 +3944,7 @@ GameObject:
   - component: {fileID: 774263907}
   - component: {fileID: 774263906}
   m_Layer: 0
-  m_Name: Cost_Text
+  m_Name: bCost_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4219,6 +4255,11 @@ CanvasRenderer:
 --- !u!1 &842603613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1589360022984104344, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
+  m_PrefabInstance: {fileID: 7436807957378465826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &842603615 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 845086620211911104, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
   m_PrefabInstance: {fileID: 7436807957378465826}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &910319626
@@ -4670,6 +4711,11 @@ MonoBehaviour:
 --- !u!1 &1170400195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1385745914865412862, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
+  m_PrefabInstance: {fileID: 7436807957378465826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1170400197 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3940025008752553355, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
   m_PrefabInstance: {fileID: 7436807957378465826}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1221169659 stripped
@@ -5241,7 +5287,7 @@ GameObject:
   - component: {fileID: 1580504889}
   - component: {fileID: 1580504888}
   m_Layer: 0
-  m_Name: Cost_Text
+  m_Name: hCost_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6609,5 +6655,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2D Origin Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7436807955641611645, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
+      propertyPath: aC_player
+      value: 
+      objectReference: {fileID: 464184385}
+    - target: {fileID: 7436807955641611645, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
+      propertyPath: aC_BluePlayer
+      value: 
+      objectReference: {fileID: 842603615}
+    - target: {fileID: 7436807955641611645, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
+      propertyPath: aC_GreenPlayer
+      value: 
+      objectReference: {fileID: 1170400197}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
