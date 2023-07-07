@@ -4265,6 +4265,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e25d4f59ef5024d9c5fa0798f573f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blue:
+    name: Blue Shirt
+    cost: 100
+  green:
+    name: Green Shirt
+    cost: 150
+  hat:
+    name: Player Hat
+    cost: 200
   shopCanvas: {fileID: 1031878013}
   defaultPlayer: {fileID: 464184383}
   bluePlayer: {fileID: 842603613}

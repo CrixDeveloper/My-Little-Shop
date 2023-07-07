@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Manager_Shop : MonoBehaviour
 {
     #region Variables to use:
+
+    [Header("Shop Item: ")]
+    public Class_Item blue, green, hat;
 
     [Header("Canvas References: ")]
     public GameObject shopCanvas;
