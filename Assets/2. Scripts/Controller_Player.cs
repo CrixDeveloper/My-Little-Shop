@@ -26,7 +26,7 @@ public class Controller_Player : MonoBehaviour
         // Getting components to avoid making all player's variables public: 
 
         playerRb = GetComponent<Rigidbody2D>();
-        playerAnimator = GetComponent<Animator>();
+        playerAnimator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
