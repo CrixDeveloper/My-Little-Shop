@@ -10,6 +10,8 @@ public class Controller_Player : MonoBehaviour
     private Vector2 movementInput;
     private Rigidbody2D playerRb;
     private Animator playerAnimator;
+    private Animator bluePlayerAnimator;
+    private Animator greenPlayerAnimator;
 
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -27,6 +29,8 @@ public class Controller_Player : MonoBehaviour
 
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponentInChildren<Animator>();
+        bluePlayerAnimator = GetComponentInChildren<Animator>();
+        greenPlayerAnimator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -60,21 +64,14 @@ public class Controller_Player : MonoBehaviour
             }
 
             playerAnimator.SetBool("isMoving", success);
+            bluePlayerAnimator.SetBool("isMoving", success);
+            greenPlayerAnimator.SetBool("isMoving", success);
         }
         else
         {
             playerAnimator.SetBool("isMoving", false);
-        }
-
-        // We need to change between normal walking and side walking:
-        
-        if (movementInput.x > 0 || movementInput.x < 0)
-        {
-            playerAnimator.SetBool("isSideWalking", true);
-        }
-        else if (movementInput.x == 0)
-        {
-            playerAnimator.SetBool("isSideWalking", false);
+            bluePlayerAnimator.SetBool("isMoving", false);
+            greenPlayerAnimator.SetBool("isMoving", false);
         }
     }
 
