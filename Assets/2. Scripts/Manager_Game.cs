@@ -55,5 +55,11 @@ public class Manager_Game : MonoBehaviour
         Manager_Audio.Instance.PlayAudio("Button Pressed");
     }
 
+    public void ExitButton()
+    {
+        Debug.Log("Close");
+        Application.Quit();    
+    }
+
     #endregion
 }
