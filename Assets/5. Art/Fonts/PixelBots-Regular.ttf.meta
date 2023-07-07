@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: ae09528cf84ac6a479f89c504e57f187
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Pixel Bots
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d966c827af5431044939d1ade463aac4, type: 3}
+  - {fileID: 12800000, guid: a791b2881f249fe41b4d563154bad534, type: 3}
+  - {fileID: 12800000, guid: e12ec28db258bfb41b729a1e556e7ecd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
