@@ -26,6 +26,8 @@ public class Manager_Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Manager_Audio.Instance.PlayAudio("Environment Clip");
+
         b_ShirtCostText.text = "$ " + Manager_Shop.Instance.blue.cost.ToString();
         g_ShirtCostText.text = "$ " + Manager_Shop.Instance.green.cost.ToString();
         hat_CostText.text = "$ " + Manager_Shop.Instance.hat.cost.ToString();
@@ -38,6 +40,11 @@ public class Manager_Game : MonoBehaviour
     }
 
     #region Methods in use:
+
+    public void ButtonSound()
+    {
+        Manager_Audio.Instance.PlayAudio("Button Pressed");
+    }
 
     #endregion
 }

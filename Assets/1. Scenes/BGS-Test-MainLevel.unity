@@ -299,6 +299,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 910319628}
+        m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
+        m_MethodName: PurchasedSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &79351752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,6 +2234,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 103395604}
+        m_TargetAssemblyTypeName: Manager_Game, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &338072892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2347,6 +2371,18 @@ MonoBehaviour:
       - m_Target: {fileID: 910319628}
         m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
         m_MethodName: PurchaseGreenShirt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 910319628}
+        m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
+        m_MethodName: PurchasedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2512,6 +2548,18 @@ MonoBehaviour:
       - m_Target: {fileID: 910319628}
         m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
         m_MethodName: SellHat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 910319628}
+        m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
+        m_MethodName: PurchasedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4707,7 +4755,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ca31239f11d79468a54b92408e50fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - clipName: Environment Clip
+    audioClip: {fileID: 8300000, guid: e51e52de64c94db42b24a46eded792b2, type: 3}
+    audioLoop: 1
+    audioVolume: 0.3
+    audioPitch: 1
+    audioSource: {fileID: 0}
+  - clipName: Button Pressed
+    audioClip: {fileID: 8300000, guid: 87c7e0f672536634ca5f6484c25fff97, type: 3}
+    audioLoop: 0
+    audioVolume: 1
+    audioPitch: 1
+    audioSource: {fileID: 0}
+  - clipName: Purchased Clip
+    audioClip: {fileID: 8300000, guid: 660bcc7ef0f1e414e8416bc89bccd3dd, type: 3}
+    audioLoop: 0
+    audioVolume: 1
+    audioPitch: 1
+    audioSource: {fileID: 0}
 --- !u!1 &1170400195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1385745914865412862, guid: b323e5fc8456fed4c902db7f0ad94b70, type: 3}
@@ -4841,6 +4907,18 @@ MonoBehaviour:
       - m_Target: {fileID: 910319628}
         m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
         m_MethodName: SellGreenShirt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 910319628}
+        m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
+        m_MethodName: PurchasedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5117,6 +5195,18 @@ MonoBehaviour:
       - m_Target: {fileID: 910319628}
         m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
         m_MethodName: PurchaseHat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 910319628}
+        m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
+        m_MethodName: PurchasedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5442,6 +5532,18 @@ MonoBehaviour:
       - m_Target: {fileID: 910319628}
         m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
         m_MethodName: SellBlueShirt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 910319628}
+        m_TargetAssemblyTypeName: Manager_Shop, Assembly-CSharp
+        m_MethodName: PurchasedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

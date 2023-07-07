@@ -162,5 +162,10 @@ public class Manager_Shop : MonoBehaviour
         hat_BuyButton.SetActive(true);
     }
 
+    public void PurchasedSound()
+    {
+        Manager_Audio.Instance.PlayAudio("Purchased Clip");
+    }
+
     #endregion
 }
