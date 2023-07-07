@@ -1,4 +1,6 @@
+using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Manager_Shop : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class Manager_Shop : MonoBehaviour
     public GameObject bluePlayer;
     public GameObject greenPlayer;
     public GameObject playerHat;
+    public Text titleText;
 
     [Header("Buttons References: ")]
     public GameObject b_BuyButton;
@@ -56,10 +59,12 @@ public class Manager_Shop : MonoBehaviour
     {
         if (Data_Player.money < blue.cost)
         {
-            Debug.Log("Oopss not enough money to buy this one! ");
+            titleText.color = Color.red;
+            titleText.text = "Hey Amigo! You don't have enough plata!!";
+
             return;
         }
-        else if (Data_Player.money > blue.cost)
+        else if (Data_Player.money >= blue.cost)
         {
             Data_Player.money -= blue.cost;
 
@@ -95,10 +100,12 @@ public class Manager_Shop : MonoBehaviour
     {
         if (Data_Player.money < green.cost)
         {
-            Debug.Log("Oopss not enough money to buy this one! ");
+            titleText.color = Color.red;
+            titleText.text = "Hey Amigo! You don't have enough plata!!";
+
             return;
         }
-        else if (Data_Player.money > green.cost)
+        else if (Data_Player.money >= green.cost)
         {
             Data_Player.money -= green.cost;
 
@@ -134,10 +141,12 @@ public class Manager_Shop : MonoBehaviour
     {
         if (Data_Player.money < hat.cost)
         {
-            Debug.Log("Oopss not enough money to buy that one! ");
+            titleText.color = Color.red;
+            titleText.text = "Hey Amigo! You don't have enough plata!!";
+
             return;
         }
-        else if (Data_Player.money > hat.cost)
+        else if (Data_Player.money >= hat.cost)
         {
             Data_Player.money -= hat.cost;
 

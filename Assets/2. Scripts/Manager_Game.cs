@@ -37,10 +37,18 @@ public class Manager_Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Not used at the moment. 
+        RestartGame();
     }
 
     #region Methods in use:
+
+    private void RestartGame()
+    {
+        if (Data_Player.money < 100)
+        {
+            SceneManager.LoadScene("BGS-Test-MainLevel");
+        }
+    }
 
     public void ButtonSound()
     {
