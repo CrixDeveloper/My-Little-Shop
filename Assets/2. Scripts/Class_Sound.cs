@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Class_Sound : MonoBehaviour
+public class Class_Sound
 {
     #region Class Properties: 
 

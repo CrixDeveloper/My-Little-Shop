@@ -53,7 +53,7 @@ public class Manager_Audio : MonoBehaviour
 
     public void PlayAudio(string name)
     {
-        Class_Sound s = Array.Find(sounds, sound => sound.name == name);
+        Class_Sound s = Array.Find(sounds, sound => sound.clipName == name);
 
         if (s == null)
         {
@@ -66,7 +66,7 @@ public class Manager_Audio : MonoBehaviour
 
     public void StopAudio(string name)
     {
-        Class_Sound s = Array.Find(sounds, sound => sound.name == name);
+        Class_Sound s = Array.Find(sounds, sound => sound.clipName == name);
 
         if (s == null)
         {
